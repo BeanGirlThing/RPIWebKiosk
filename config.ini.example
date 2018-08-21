@@ -1,0 +1,6 @@
+[config]
+webpage=
+#Seperate addons with a semi colon (;) addons are stored in the files folder
+firefox_addons=hide_tabbar-2.1.0-fx.xpi;r_kiosk-0.9.0-fx.xpi
+shutdown_on_close=true
+
