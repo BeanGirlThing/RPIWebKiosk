@@ -14,7 +14,7 @@ class main:
 	ffprofile = webdriver.FirefoxProfile()
 	for i in range(0,len(plugins)):
 		ffprofile.add_extension(extension="./files/firefox_addons/"+plugins[i])
-	browser = webdriver.Firefox(firefox_profile=ffprofile, executable_path="./files/geckodriver")
+	browser = webdriver.Firefox(firefox_profile=ffprofile)
 	def __init__(self):
 		print("Booting up webbrowser with current config!")
 		self.browser.get(self.webpage)
