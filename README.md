@@ -1,6 +1,8 @@
 # RPIWebKiosk
 Initially for RAAS but can be used on any raspberry pi you wish to turn into a web kiosk
 
+# This is a currently untested version that will be merged with master after I finish testing it
+
 # Installation
 
 To install it is recommended that you are using the latest version of raspbian, but be aware that this software was
