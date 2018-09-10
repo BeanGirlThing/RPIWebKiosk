@@ -11,9 +11,9 @@ class main: # Defining the main object
 	config.read("./config.ini") # Assigning the "config.ini" file to the configuration object
 	webpage = config.get("config", "webpage") # Getting the webpage address from the config
 	kiosk = config.get("config", "kiosk") # Check wether the browser will run in kiosk mode
-        options = Options() # Create a chrome options object
+	options = Options() # Create a chrome options object
 	if kiosk == "True": # If the browser is supposed to run in kiosk mode
-                options.add_arguement("--kiosk") # Set an arguement to make the browser run in kiosk mode
+	options.add_arguement("--kiosk") # Set an arguement to make the browser run in kiosk mode
 
 	def __init__(self): # Initialisation
 		print("Booting up webbrowser with current config!") # Info 
