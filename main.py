@@ -22,28 +22,19 @@ class main: # Defining the main object
 	def __init__(self): # Initialisation
 		print("Booting up webbrowser with current config, on page '"+self.webpage+"'!") # Info 
 		browser = webdriver.Chrome(executable_path=self.chromedriver, chrome_options=self.options) # Create the browser object using the profile created previously
-		browser.get(self.webpage)
-		while True:
-			try:
-				sleep(0.1)
-			except KeyboardInterrupt:
-				ch = input("Are you sure? Y/n: ")
-				if ch.upper() = "Y":
-					break
-				else:
-					continue
-	def browserstatus(self,browser):
-		try:
-			browser.execute(Command.STATUS)
-			return True
-		except:
-			return False
-"""
+		browser.get(self.webpage) # Open the browser to the webpage specified in the config
+		while True: # Repeat until break
+			try: # Try-Catch
+				sleep(0.1) # Sleep for .1 of a second
+			except KeyboardInterrupt: # Catch KeyboardInterupt
+				browser.quit() # Close the browser
+				break # Break the loop
+
 if __name__ == "__main__": # If the script is ran
-	main() # run the main class 
+	main() # run the main class
 	config = configparser.ConfigParser() # Create a configuration object
 	config.read("./config.ini") # Read the config file
-	print("Terminating program")
-	if config.read("config","shutdown_on_close") == "True": # If shutdown on close is true
-		os.system("sudo halt") # Shutdown the system
+	print("Terminating program   "+ str(config.read("config", "reboot_on_close")))
+	if config.read("config","reboot_on_close")[0].upper() == "TRUE": # If shutdown on close is true
+		os.system("reboot") # Shutdown the system
 
